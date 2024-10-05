@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  users_api:
+    build:
+      context: .  # Esto debería apuntar al directorio raíz del proyecto donde está el Dockerfile
+      dockerfile: APIS/Dockerfile
+    ports:
+      - "3000:3000"
