@@ -5,7 +5,7 @@
  * 
  * Cafe Arandia 2.0
  * 
- * Controlador - Ordenes
+ *  Ordenes
  */
 
 const Order = require('../models/Order');
