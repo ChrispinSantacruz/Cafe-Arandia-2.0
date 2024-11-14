@@ -34,4 +34,4 @@ COPY usuarios /usr/userAPI
 
 RUN prisma generate
 
-CMD [ "nodemon", "app.js" ]
+CMD ["node", "app.js"]

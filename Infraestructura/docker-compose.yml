@@ -22,9 +22,7 @@ services:
       - dev_network
   
   db_dev:
-    build:
-      context: ./APIS
-      dockerfile: Dockerfile.postgres_base
+    image: postgres:17   # Usando la imagen oficial de PostgreSQL
     container_name: users_db_dev
     deploy:
       resources:
@@ -37,11 +35,13 @@ services:
     ports:
       - "5432:5432"
     environment:
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: my_database
     volumes:
-      - ./users_data_dev:/var/lib/postgresql/data
-      - ./users_logs:/var/log/postgresql
-      - ./postgresql_configs:/etc/postgresql
+      - ./users_data_dev:/var/lib/postgresql/data  # Datos de PostgreSQL
+      - ./users_logs:/var/log/postgresql           # Logs de PostgreSQL
+      - ./postgresql_configs:/etc/postgresql       # Configuración de PostgreSQL
     networks:
       - dev_network
     
